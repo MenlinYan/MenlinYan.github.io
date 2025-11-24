@@ -3,72 +3,72 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menlin Yan | Academic Home</title>
+    <title>Menlin Yan | Academic Homepage</title>
+
+    <!-- Inter 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <style>
-        /* --- 核心变量设置 --- */
         :root {
             --bg-color: #050505;
-            --card-bg: #141414;
-            --text-main: #e0e0e0;
-            --text-muted: #888888;
-            --accent-color: #00f3ff; /* 霓虹青 */
-            --accent-hover: #bc13fe; /* 赛博紫 */
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --card-bg: #0e0e0e;
+            --text-main: #e8e8e8;
+            --text-muted: #8b8b8b;
+            --accent-color: #00eaff; 
+            --accent-hover: #bc13fe; 
+            --font-main: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-main);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: var(--font-main);
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- 布局容器 --- */
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* --- 头部设计 --- */
         header {
             text-align: center;
             margin-bottom: 60px;
-            padding-top: 40px;
         }
 
+        /* Avatar */
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+            border: 3px solid var(--accent-color);
             margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 10px 0;
-            background: linear-gradient(90deg, var(--text-main), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-weight: 800;
-            letter-spacing: -1px;
+            background: linear-gradient(120deg, #fff, var(--accent-color));
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        /* --- 导航栏 --- */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-bottom: 60px;
         }
 
@@ -82,68 +82,67 @@
 
         nav a:hover {
             color: var(--accent-color);
+            text-shadow: 0 0 8px var(--accent-color);
         }
 
-        /* --- 模块通用样式 --- */
         section {
-            margin-bottom: 60px;
-            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 70px;
+            animation: fadeIn 1s ease;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             border-left: 4px solid var(--accent-color);
             padding-left: 15px;
-            margin-bottom: 25px;
             color: #fff;
         }
 
-        /* --- 论文列表样式 --- */
+        /* Paper Card */
         .paper-item {
             background: var(--card-bg);
-            border: 1px solid #222;
             padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: transform 0.2s, border-color 0.2s;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            transition: 0.25s;
         }
 
         .paper-item:hover {
-            transform: translateY(-3px);
             border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
         }
 
         .paper-title {
+            font-size: 1.05rem;
             font-weight: 700;
-            color: #fff;
-            display: block;
-            margin-bottom: 8px;
-            text-decoration: none;
         }
 
         .paper-authors {
+            font-size: 0.92rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
         .paper-venue {
             color: var(--accent-color);
-            font-size: 0.9rem;
-            font-weight: bold;
             margin-top: 5px;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .links a {
             display: inline-block;
-            margin-top: 10px;
             margin-right: 10px;
-            font-size: 0.85rem;
-            color: var(--text-main);
-            border: 1px solid #333;
-            padding: 2px 8px;
+            margin-top: 10px;
+            padding: 3px 8px;
             border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #333;
             text-decoration: none;
-            transition: 0.3s;
+            color: var(--text-main);
+            transition: 0.25s;
         }
 
         .links a:hover {
@@ -152,47 +151,45 @@
             border-color: var(--accent-color);
         }
 
-        /* --- 新闻列表样式 --- */
+        /* News timeline */
         .news-item {
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
+
         .news-date {
-            min-width: 100px;
+            min-width: 110px;
             color: var(--accent-color);
             font-family: monospace;
         }
 
-        /* --- 页脚 --- */
         footer {
             text-align: center;
-            color: #444;
             font-size: 0.8rem;
+            color: #555;
             margin-top: 80px;
             padding-bottom: 40px;
         }
 
-        /* --- 动画 --- */
+        /* Animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- 移动端适配 --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 20px; }
         }
     </style>
 </head>
-<body>
 
+<body>
 <div class="container">
     <header>
-        <img src="https://github.com/identicons/MenlinYan.png" alt="Menlin Yan" class="avatar" />
+        <!-- 修复后的头像 URL -->
+        <img src="https://avatars.githubusercontent.com/MenlinYan" class="avatar" />
+
         <h1>Menlin Yan</h1>
         <div class="subtitle">Ph.D. Student @ University Name</div>
-        <div class="subtitle" style="margin-top:5px; font-size: 0.9rem;">Research Interest: AI, Computer Vision, Cool Stuff</div>
+        <div class="subtitle" style="font-size:0.95rem; margin-top:6px;">
+            Research Interests: AI, Computer Vision, Cool Systems
+        </div>
     </header>
 
     <nav>
@@ -205,10 +202,8 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hi, I am <strong>Menlin Yan</strong>. Currently, I am a Ph.D. student at [University Name], advised by Prof. [Name]. 
-        </p>
-        <p>
-            My research focuses on <strong>Machine Learning</strong> and <strong>Deep Learning</strong>. I am passionate about building cool systems and exploring the dark side of the moon.
+            I am <strong>Menlin Yan</strong>, a Ph.D. student at [University], advised by Prof. [Name].
+            My research focuses on <strong>Machine Learning</strong>, <strong>Computer Vision</strong>, and building cool intelligent systems.
         </p>
     </section>
 
@@ -220,7 +215,7 @@
         </div>
         <div class="news-item">
             <span class="news-date">[2025.08]</span>
-            <span>Started my internship at Google Research.</span>
+            <span>Started internship at Google Research.</span>
         </div>
         <div class="news-item">
             <span class="news-date">[2025.01]</span>
@@ -233,26 +228,22 @@
 
         <div class="paper-item">
             <div class="paper-title">Your Awesome Paper Title Goes Here</div>
-            <div class="paper-authors">
-                <strong>Menlin Yan</strong>, Co-author One, Co-author Two
-            </div>
+            <div class="paper-authors"><strong>Menlin Yan</strong>, Co-author One, Co-author Two</div>
             <div class="paper-venue">CVPR 2025 (Oral)</div>
             <div class="links">
-                <a href="#">[PDF]</a>
-                <a href="#">[Code]</a>
-                <a href="#">[Project Page]</a>
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
+                <a href="#">Project</a>
             </div>
         </div>
 
         <div class="paper-item">
             <div class="paper-title">Another Great Work on Cool Topics</div>
-            <div class="paper-authors">
-                Co-author, <strong>Menlin Yan*</strong> (Corresponding Author)
-            </div>
+            <div class="paper-authors">Co-author, <strong>Menlin Yan*</strong></div>
             <div class="paper-venue">NeurIPS 2024</div>
             <div class="links">
-                <a href="#">[PDF]</a>
-                <a href="#">[Code]</a>
+                <a href="#">PDF</a>
+                <a href="#">Code</a>
             </div>
         </div>
     </section>
@@ -260,13 +251,10 @@
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: menlin.yan [at] university.edu</p>
-        <p>Github: <a href="https://github.com/MenlinYan" style="color:var(--accent-color)">@MenlinYan</a></p>
+        <p>Github: <a href="https://github.com/MenlinYan" style="color:var(--accent-color);">@MenlinYan</a></p>
     </section>
 
-    <footer>
-        &copy; 2025 Menlin Yan. Designed with Dark Mode Aesthetics.
-    </footer>
+    <footer>&copy; 2025 Menlin Yan. Designed with Cyberpunk Dark Mode.</footer>
 </div>
-
 </body>
 </html>
