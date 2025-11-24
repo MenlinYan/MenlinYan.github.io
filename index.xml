@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menlin Yan | Academic Home</title>
     <style>
         /* --- 核心变量设置 --- */
@@ -189,7 +189,7 @@
 
 <div class="container">
     <header>
-        <img src="https://github.com/identicons/MenlinYan.png" alt="Menlin Yan" class="avatar">
+        <img src="https://github.com/identicons/MenlinYan.png" alt="Menlin Yan" class="avatar" />
         <h1>Menlin Yan</h1>
         <div class="subtitle">Ph.D. Student @ University Name</div>
         <div class="subtitle" style="margin-top:5px; font-size: 0.9rem;">Research Interest: AI, Computer Vision, Cool Stuff</div>
