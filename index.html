@@ -8,10 +8,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome Icons (已闭合) -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
-    <!-- Google Fonts (已修复 & 符号并闭合) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet" />
     
     <script>
@@ -75,7 +75,6 @@
         <!-- Header -->
         <header class="flex flex-col items-center text-center mb-16">
             <div class="w-32 h-32 rounded-full border-2 border-ai p-1 mb-6 shadow-[0_0_20px_rgba(0,242,255,0.3)] transition hover:scale-105 duration-300">
-                <!-- img 标签已闭合 -->
                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=NJU_AI_Student" alt="Avatar" class="w-full h-full rounded-full bg-gray-800 object-cover" />
             </div>
             
@@ -148,7 +147,8 @@
         </section>
 
         <footer class="text-center text-gray-600 text-sm py-8 font-mono">
-            <p>&copy; 2024 Created at NJU.</p>
+            <!-- 修复点：将 &copy; 替换为 &#169; 以通过 XML 解析 -->
+            <p>&#169; 2024 Created at NJU.</p>
         </footer>
     </div>
 
