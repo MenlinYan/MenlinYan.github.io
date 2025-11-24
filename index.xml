@@ -8,15 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Fixed: Replaced & with &amp;) -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        nju: '#6a005f', // NJU Purple (subtle usage)
+                        nju: '#6a005f', // NJU Purple
                         ai: '#00f2ff',  // Cyan Neon
                         dark: '#0a0a0a',
                         glass: 'rgba(20, 20, 20, 0.7)',
@@ -35,6 +35,7 @@
             color: #e5e5e5;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            background-color: #0a0a0a; /* Fallback */
         }
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -73,7 +74,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            pointer-events: none; /* Ensure clicks pass through */
+            pointer-events: none;
         }
     </style>
 </head>
@@ -108,7 +109,7 @@
             <!-- Social Links -->
             <div class="flex gap-6 text-2xl">
                 <a href="#" class="hover:text-ai transition transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
-                <a href="#" class="hover:text-ai transition transform hover:-translate-y-1"><i class="fas fa-graduation-cap"></i></a> <!-- Google Scholar -->
+                <a href="#" class="hover:text-ai transition transform hover:-translate-y-1"><i class="fas fa-graduation-cap"></i></a>
                 <a href="#" class="hover:text-ai transition transform hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
                 <a href="#" class="hover:text-ai transition transform hover:-translate-y-1"><i class="fas fa-envelope"></i></a>
             </div>
@@ -191,30 +192,33 @@
 
     </div>
 
-    <!-- Scripts for Animations -->
-    <!-- Three.js & Vanta.js for Background -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     
     <script>
-        // Initialize Vanta.js (The Net Effect - looks like Neural Networks)
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x00f2ff,       // 连接线颜色 (Cyan)
-            backgroundColor: 0x0a0a0a, // 背景色 (Deep Dark)
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 18.00
-        })
+        // Initialize Vanta.js
+        try {
+            VANTA.NET({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x00f2ff,
+                backgroundColor: 0x0a0a0a,
+                points: 12.00,
+                maxDistance: 22.00,
+                spacing: 18.00
+            })
+        } catch (e) {
+            console.log("Vanta JS error (likely WebGL not supported):", e);
+        }
 
-        // Simple Typing Effect
+        // Typing Effect
         const textElement = document.getElementById('typed-text');
         const texts = ["Deep Learning Researcher", "NJU Graduate Student", "Python & PyTorch Lover"];
         let textIndex = 0;
@@ -234,7 +238,7 @@
 
             if (!isDeleting && charIndex === currentText.length) {
                 isDeleting = true;
-                setTimeout(type, 2000); // Wait before deleting
+                setTimeout(type, 2000);
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 textIndex = (textIndex + 1) % texts.length;
